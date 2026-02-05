@@ -88,4 +88,66 @@
     <gazebo reference="imu_joint"><preserveFixedJoint>true</preserveFixedJoint></gazebo>
     <gazebo reference="camera_mount_joint"><preserveFixedJoint>true</preserveFixedJoint></gazebo>
 
+
+    <!-- Left Camera Sensor -->
+    <gazebo reference="camera_left_link">
+        <sensor name="camera_left" type="camera">
+            <pose>0 0 0 0 0 0</pose>
+            <always_on>true</always_on>
+            <update_rate>30</update_rate>
+            <visualize>true</visualize>
+            <topic>camera/left/image_raw</topic>
+            <camera name="left_camera">
+                <horizontal_fov>1.5708</horizontal_fov>
+                <image>
+                    <width>640</width>
+                    <height>360</height>
+                    <format>R8G8B8</format>
+                </image>
+                <clip>
+                    <near>0.02</near>
+                    <far>300</far>
+                </clip>
+                <noise>
+                    <type>gaussian</type>
+                    <mean>0.0</mean>
+                    <stddev>0.007</stddev>
+                </noise>
+            </camera>
+        </sensor>
+        <material>Gazebo/Blue</material>
+    </gazebo>
+
+    <!-- Right Camera Sensor -->
+    <gazebo reference="camera_right_link">
+        <sensor name="camera_right" type="camera">
+            <pose>0 0 0 0 0 0</pose>
+            <always_on>true</always_on>
+            <update_rate>30</update_rate>
+            <visualize>true</visualize>
+            <topic>camera/right/image_raw</topic>
+            <camera name="right_camera">
+                <horizontal_fov>1.5708</horizontal_fov>
+                <image>
+                    <width>640</width>
+                    <height>360</height>
+                    <format>R8G8B8</format>
+                </image>
+                <clip>
+                    <near>0.02</near>
+                    <far>300</far>
+                </clip>
+                <noise>
+                    <type>gaussian</type>
+                    <mean>0.0</mean>
+                    <stddev>0.007</stddev>
+                </noise>
+            </camera>
+        </sensor>
+        <material>Gazebo/Blue</material>
+    </gazebo>
+
+    <gazebo reference="camera_left_joint"><preserveFixedJoint>true</preserveFixedJoint></gazebo>
+    <gazebo reference="camera_right_joint"><preserveFixedJoint>true</preserveFixedJoint></gazebo>
+
 </robot>
